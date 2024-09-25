@@ -11,8 +11,8 @@ jobs:
 
       - name: Install Dr. Memory
         run: |
-          wget https://github.com/DynamoRIO/dynamorio/releases/download/cronbuild-10.91.19860/DynamoRIO-Linux-10.91.19860.tar.gz
-          tar -xzf DynamoRIO-Linux-10.91.19860.tar.gz
+          curl -LO https://github.com/DynamoRIO/dynamorio/releases/download/cronbuild-10.93.19944/DynamoRIO-Windows-10.93.19944.zip
+          tar -xvzf DynamoRIO-Windows-10.93.19944.zip
 
       - name: Install Chromium dependencies
         run: |
@@ -21,5 +21,5 @@ jobs:
           
       - name: Build and Run Chromium with WebGL and DrMemory
         run: |
-          ./DynamoRIO-Linux-10.91.19860/bin64/drrun -- build/Release/chrome.exe --args --load-extension=webgl
+          DynamoRIO-Windows-10.93.19944/bin64/drrun.exe -- build/Release/chrome.exe --args --load-extension=webgl
           
