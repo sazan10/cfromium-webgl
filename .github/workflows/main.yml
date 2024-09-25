@@ -1,0 +1,25 @@
+name: Chromium Dr. Memory WebGL Test
+
+on: [push, pull_request]
+
+jobs:
+  test-chromium-dr-memory:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Dr. Memory
+        run: |
+          wget https://github.com/DynamoRIO/dynamorio/releases/download/cronbuild-10.91.19860/DynamoRIO-Linux-10.91.19860.tar.gz
+          tar -xzf DynamoRIO-Linux-10.91.19860.tar.gz
+
+      - name: Install Chromium dependencies
+        run: |
+          # Add commands to install Chromium dependencies (node, python, depot_tools, etc.)
+          # Install WebGL support if needed
+          
+      - name: Build and Run Chromium with WebGL and DrMemory
+        run: |
+          ./DynamoRIO-Linux-10.91.19860/bin64/drrun -- build/Release/chrome.exe --args --load-extension=webgl
+          
