@@ -21,5 +21,5 @@ jobs:
           
       - name: Build and Run Chromium with WebGL and DrMemory
         run: |
-          DynamoRIO-Windows-10.93.19944/bin64/drrun.exe -- "C:/Program Files/Google/Chrome/Application/chrome.exe"--args --load-extension=webgl
+          DynamoRIO-Windows-10.93.19944/bin64/drrun.exe -- "C:/Program Files/Google/Chrome/Application/chrome.exe" --args --load-extension=webgl
           
